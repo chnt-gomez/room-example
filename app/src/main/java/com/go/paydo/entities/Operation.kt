@@ -3,7 +3,6 @@ package com.go.paydo.entities
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
-import android.support.annotation.NonNull
 
 @Entity(tableName = "operations")
 data class Operation(
@@ -16,5 +15,4 @@ data class Operation(
 
     @ColumnInfo(name="apply_date")
     var applyDate: Long) {
-
 }
