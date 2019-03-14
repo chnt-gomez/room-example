@@ -40,5 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //TODO(16): Create a companion object that allows a dialog to pup up and insert a new expense
+
 
 }
