@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            //TODO(1) What to do now?
+
         }
 
     }
