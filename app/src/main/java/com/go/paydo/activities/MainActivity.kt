@@ -19,9 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-
-        }
+        //TODO(15): Create a reference to the Recycler View, use the adapter and populate it
 
     }
 
@@ -36,14 +34,11 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
-            R.id.action_settings -> {
-                intent = Intent(applicationContext, CardsActivity::class.java)
-                startActivity(intent)
-                return true
-            }
 
         }
         return false
 
     }
+
+
 }

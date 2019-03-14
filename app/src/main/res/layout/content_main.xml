@@ -16,7 +16,7 @@
             android:layout_height="wrap_content" tools:layout_editor_absoluteY="16dp"
             android:id="@+id/textView" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"/>
     <TextView
-            android:text="< $ PLACEHOLDER >"
+            android:text=" $ PLACEHOLDER "
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView2" android:layout_marginTop="8dp"
