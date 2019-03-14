@@ -2,9 +2,14 @@ package com.go.paydo.viewmodel
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
+import android.arch.lifecycle.LiveData
+import com.go.paydo.database.PayDoRoomDatabase
+import com.go.paydo.entities.Operation
+import com.go.paydo.repositories.OperationsRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
 class OperationsViewModel(application : Application) : AndroidViewModel(application) {
@@ -15,16 +20,24 @@ class OperationsViewModel(application : Application) : AndroidViewModel(applicat
         get() = parentJob + Dispatchers.Main
 
     private val scope = CoroutineScope(coroutineContext)
+    private val repository : OperationsRepository
+    val allOperations: LiveData<List<Operation>>
 
+    init {
+        val operationsDao = PayDoRoomDatabase.getInstance(application).operationsDao()
+        repository = OperationsRepository(operationsDao)
+        allOperations = repository.allOperations
+    }
 
-    //TODO(9): Make a variable to hold the OperationsRepository
+    fun insert(operation : Operation) {
+        scope.launch(Dispatchers.IO){
+            repository.insert(operation);
+        }
+    }
 
-    //TODO(10): Use a cache to hold a result query (Instead of calling the query over and over)
-
-    //TODO(11): Use the 'init' block to initialize the previous step
-
-    //TODO(12 - Optional): Use a Job and a CoroutineContext to enhance lifecycle and prevent memory leaks
-
-    //TODO(13): Create at least 1 insert operation
+    override fun onCleared() {
+        super.onCleared()
+        parentJob.cancel()
+    }
 
 }
