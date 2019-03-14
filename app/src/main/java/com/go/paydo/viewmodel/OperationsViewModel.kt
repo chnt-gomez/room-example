@@ -1,8 +1,12 @@
 package com.go.paydo.viewmodel
 
+import android.app.Application
+import android.arch.lifecycle.AndroidViewModel
+import kotlinx.coroutines.Job
 
-//TODO(8): Make this a view model by extending AndroidViewModel. Match their constructors
-class OperationsViewModel {
+class OperationsViewModel(application : Application) : AndroidViewModel(application) {
+
+    private var parentJob = Job()
 
     //TODO(9): Make a variable to hold the OperationsRepository
 

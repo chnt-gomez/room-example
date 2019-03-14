@@ -4,10 +4,13 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
+import com.go.paydo.daos.OperationsDAO
 import com.go.paydo.entities.Operation
 
 @Database(entities = arrayOf(Operation::class), version = 1)
 public abstract class PayDoRoomDatabase : RoomDatabase() {
+
+    abstract fun operationsDao(): OperationsDAO
 
     companion object {
         @Volatile private var INSTANCE : PayDoRoomDatabase? = null
