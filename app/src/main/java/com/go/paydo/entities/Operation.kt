@@ -5,31 +5,16 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 import android.support.annotation.NonNull
 
-
-@Entity(tableName = "operation")
+@Entity(tableName = "operations")
 data class Operation(
     @PrimaryKey(autoGenerate = true)
-    @NonNull
-    @ColumnInfo(name = "operation_id")
-    var accountId : Int?,
+    @ColumnInfo(name = "id")
+    var id : Int,
 
-    @ColumnInfo(name = "reference")
-    var reference : String? = "N/A",
+    @ColumnInfo(name="amount")
+    var amount : Float,
 
-    @ColumnInfo(name = "apply_date")
-    @NonNull
-    var applyDate : Long?,
+    @ColumnInfo(name="apply_date")
+    var applyDate: Long) {
 
-    @ColumnInfo(name ="partial")
-    @NonNull
-    var partial : Int? = 1,
-
-    @ColumnInfo(name ="total_payments")
-    @NonNull
-    var totalPayment : Int? = 1,
-
-    @ColumnInfo(name = "amount")
-    @NonNull
-    var amount : Float? = 0.0F
-    ) {
 }
