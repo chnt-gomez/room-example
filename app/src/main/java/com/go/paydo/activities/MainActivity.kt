@@ -1,10 +1,10 @@
 package com.go.paydo.activities
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.go.paydo.R
 
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         //TODO(15): Create a reference to the Recycler View, use the adapter and populate it
+
 
     }
 
